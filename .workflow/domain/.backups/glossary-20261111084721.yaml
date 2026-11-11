@@ -1,0 +1,47 @@
+$schema: domain/1.0
+terms:
+  - id: mini-app
+    canonical: Mini-App
+    aliases: []
+    definition: 微应用：构建在 Discourse 社区之上、以受控 iframe 嵌入论坛页面运行的沙箱化小应用/小工具；本仓库（mapp-developer-guide）是它的开发者文档 + SDK + 示例配套交付物
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:20.327Z
+  - id: manifest
+    canonical: manifest
+    aliases: []
+    definition: app.zip 内的清单文件：声明入口（index.html/app.js/app.css）、约 30 项权限、网络端点白名单、外链与 CDN 素材（URL+SHA-256+size+MIME 钉死）；审核与运行时管控的唯一依据
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:20.531Z
+  - id: app-zip
+    canonical: app.zip
+    aliases: []
+    definition: 微应用提审/发布产物 ZIP：固定 5 基础文件 + manifest 声明的 assets/media；限额 128 MiB 解压/32 MiB 单文件/1024 文件；必须用 SDK pack
+      打包（路径规范化、UTF-8 ZIP）
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:20.744Z
+  - id: sandbox
+    canonical: sandbox
+    aliases: []
+    definition: 沙箱：应用上传后先经沙箱构建运行验证再提审；应用运行在受控 iframe 中，访问不到论坛 Cookie、父 DOM、其他应用数据
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:20.961Z

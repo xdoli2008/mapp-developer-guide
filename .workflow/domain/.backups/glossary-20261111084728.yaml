@@ -1,0 +1,135 @@
+$schema: domain/1.0
+terms:
+  - id: mini-app
+    canonical: Mini-App
+    aliases: []
+    definition: 微应用：构建在 Discourse 社区之上、以受控 iframe 嵌入论坛页面运行的沙箱化小应用/小工具；本仓库（mapp-developer-guide）是它的开发者文档 + SDK + 示例配套交付物
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:20.327Z
+  - id: manifest
+    canonical: manifest
+    aliases: []
+    definition: app.zip 内的清单文件：声明入口（index.html/app.js/app.css）、约 30 项权限、网络端点白名单、外链与 CDN 素材（URL+SHA-256+size+MIME 钉死）；审核与运行时管控的唯一依据
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:20.531Z
+  - id: app-zip
+    canonical: app.zip
+    aliases: []
+    definition: 微应用提审/发布产物 ZIP：固定 5 基础文件 + manifest 声明的 assets/media；限额 128 MiB 解压/32 MiB 单文件/1024 文件；必须用 SDK pack
+      打包（路径规范化、UTF-8 ZIP）
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:20.744Z
+  - id: sandbox
+    canonical: sandbox
+    aliases: []
+    definition: 沙箱：应用上传后先经沙箱构建运行验证再提审；应用运行在受控 iframe 中，访问不到论坛 Cookie、父 DOM、其他应用数据
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:20.961Z
+  - id: permission
+    canonical: permission
+    aliases: []
+    definition: 权限声明：manifest 中约 30 项细粒度权限（user.read、storage.write、audio.webAudio、code.eval 等），按需申请 + 人工审核，运行时按声明授予
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:21.168Z
+  - id: submission-review
+    canonical: submission-review
+    aliases: []
+    definition: 提审：将 app.zip 连同固定名称/简介/图标等材料提交审核的流程；管理员审核通过后正式上线，正式版只能升版本
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:27.086Z
+  - id: build-exists
+    canonical: BUILD_EXISTS
+    aliases: []
+    definition: 错误码：同 SHA-256 的包重复上传被拒；重新提审前需保证包内容有实际变化
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:27.300Z
+  - id: rollback
+    canonical: rollback
+    aliases: []
+    definition: 回滚：正式版应用可回退到历史版本的能力（发布/回滚规则见 docs/submission-review.md）
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:27.510Z
+  - id: sandbox-expiry
+    canonical: sandbox-expiry
+    aliases: []
+    definition: 沙箱构建有效期：7 天过期，过期需重新构建上传
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:27.718Z
+  - id: es256-jwt
+    canonical: ES256-JWT
+    aliases: []
+    definition: 平台签发的用户身份令牌（ES256 签名 JWT）；开发者自有后端验签以识别论坛用户，参考实现 @discourse-mini-app/sdk/server
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:27.929Z
+  - id: jwks
+    canonical: JWKS
+    aliases: []
+    definition: 公钥获取端点：<社区>/mini-app-api/jwks；开发者后端从中取 ES256 公钥完成 JWT 验签
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:28.137Z
+  - id: trust-level
+    canonical: trust-level
+    aliases: []
+    definition: 信任等级：Discourse 用户信任等级 0-4，随平台 JWT 传递给开发者后端
+    relationships: []
+    keywords: []
+    tier: core
+    status: active
+    source:
+      kind: manual
+      registered_at: 2026-11-11T08:47:28.348Z

@@ -17,3 +17,11 @@ dist/
 # maestro generated state (regenerable)
 .workflow/kg/
 .workflow/domain/.backups/
+# maestro search/index runtime state (regenerable)
+.workflow/wiki-index.json
+.workflow/wiki-index-publisher.lock
+.workflow/search-cache.json
+.workflow/search-daemon.json
+.workflow/embedding-index.bin
+.workflow/embedding.zvec/
+.workflow/embedding.zvec.meta.json

@@ -22,6 +22,7 @@ Discourse 社区「微应用」（Mini-App）平台的开发者指南仓库。�
 
 <!-- Current scope being built toward. These are hypotheses until shipped. -->
 
+- [ ] 想法孵化：新微应用的 idea 阶段在本仓库 brainstorm 探索与验证，成熟后经模板派生独立仓库（见 NEW-APP.md；brainstorm 产物落在 .workflow/scratch/，不入库）
 - [ ] 文档与平台演进保持同步：平台新增能力时补充对应文档章节，行为变更时修订既有描述
 - [ ] 文档错误与过时内容修正：限额表、错误码、API 签名等关键事实与 SDK 实际行为核对一致
 - [ ] 文档内示例代码与 demos/ 实际工程保持一致（复制可用、不误导）
@@ -33,6 +34,7 @@ Discourse 社区「微应用」（Mini-App）平台的开发者指南仓库。�
 - 微应用平台本体（宿主 Discourse 插件/服务端实现）— 不在本仓库中，本仓库只是配套交付物，平台行为以平台实现为准
 - SDK 运行时桥接层源码重写 — sdk/ 中 .mjs 为平台压缩产物，按发布物对待而非可重构源码
 - 示例工程的大规模架构改造 — 示例的价值在于最小化展示能力用法，不追求工程化完备
+- idea 成品开发 — 成熟想法必须转移到独立仓库开发，本仓库只承载孵化（避免模板污染与职责混杂）
 
 ## Context
 
@@ -64,6 +66,7 @@ Discourse 社区「微应用」（Mini-App）平台的开发者指南仓库。�
 |----------|-----------|---------|
 | 仓库定位为文档维护为主 | 用户确认（2025-11-11 init 访谈）；平台演进快，文档同步是当前最大价值点 | — Pending |
 | 仓库设为 GitHub Template Repository（整仓快照形态） | 用户确认（2025-11-11）；后续多个微应用项目均基于本仓库模板创建独立 repo；起步清单见 NEW-APP.md | 已生效（is_template=true） |
+| 本仓库兼任想法孵化器 | 用户确认（2025-11-11）；idea 阶段在此 brainstorm 验证（复用平台知识库），成熟后模板派生独立仓库；孵化产物仅存 .workflow/scratch/（gitignore），不进 master 以保模板纯净 | 已生效 |
 | 示例作为文档事实来源（source of truth）之一 | 三个 demo 覆盖最小→全能力谱系，文档示例代码应与 demo 互相印证 | — Pending |
 
 ## Stakeholders

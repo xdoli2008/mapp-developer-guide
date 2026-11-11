@@ -13,3 +13,7 @@ dist/
 *.pem
 *.key
 /sdk/src/
+
+# maestro generated state (regenerable)
+.workflow/kg/
+.workflow/domain/.backups/

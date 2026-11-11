@@ -63,6 +63,7 @@ Discourse 社区「微应用」（Mini-App）平台的开发者指南仓库。�
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
 | 仓库定位为文档维护为主 | 用户确认（2025-11-11 init 访谈）；平台演进快，文档同步是当前最大价值点 | — Pending |
+| 仓库设为 GitHub Template Repository（整仓快照形态） | 用户确认（2025-11-11）；后续多个微应用项目均基于本仓库模板创建独立 repo；起步清单见 NEW-APP.md | 已生效（is_template=true） |
 | 示例作为文档事实来源（source of truth）之一 | 三个 demo 覆盖最小→全能力谱系，文档示例代码应与 demo 互相印证 | — Pending |
 
 ## Stakeholders
